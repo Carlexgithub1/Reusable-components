@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    transition: all 150ms ease-in-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/** BASICS **/
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+}
+
+
+.wrapper {
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #09f;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+/* FORM */
+form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #00000022;
+}
+
+input {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    color: #444a;
+}
+
+/* OVERLAY */
+.overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000dd;
+    /*backdrop-filter: blur(5px);*/
+}
+
+.choices {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: fit-content;
+    align-self: center;
+    background-color: #222222dd;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #222;
+}
+
+[hidden] {
+    animation: scaleOpacityDown 300ms 1 ease-out;
+    display: none;
+}
+
+.choices button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.close-choices {
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 80px;
+    border: 1px solid #f00;
+    background-color: #ff000022;
+    position: relative;
+    cursor: pointer;
+}
+
+.close-choices:hover {
+    background-color: #f00;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    width: 100%;
+    height: none;
+    border: 2px solid #f00;
+}
+
+.close-choices:hover .cross {
+    animation: rotate 1s 1 cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.close-choices:hover .cross .line {
+    border-color: #fff;
+}
+
+.line:first-child {
+    transform: translateY(1px) rotate(45deg);
+}
+
+.line:last-child {
+    transform: translateY(-2px) rotate(-45deg);
+}
+
+/* ANIMATIONS */
+@keyframes rotate {
+    form {
+        rotate: deg;
+    }
+
+    to {
+        rotate: 270deg;
+    }
+}
+
+@keyframes scaleOpacityDown {
+    from {
+        scale: 1;
+        opacity: 100%;
+    }
+
+    to {
+        scale: 0;
+        opacity: 0;
+    }
+}
